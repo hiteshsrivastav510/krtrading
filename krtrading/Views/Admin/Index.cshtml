@@ -1,0 +1,278 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+
+}
+
+<style>
+    .hiding_sales_div_text2 {
+        /* padding: 12% 3% 10% 5%;*/
+        padding: 3%;
+    }
+
+
+    .buttin_im a {
+        background: #804481;
+        color: #fff;
+    }
+
+    .dashbox {
+        padding: 12px;
+        height: 116px;
+        border-bottom-left-radius: 5px;
+        border-top-right-radius: 5px;
+    }
+
+        .dashbox i {
+            font-size: 30px;
+        }
+
+    .boxheading, .boxpart span {
+        color: white !important;
+        display: block;
+        font-size: 16px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-weight: 400;
+    }
+
+    .icon {
+        float: left;
+        height: 70px;
+        width: 70px;
+        text-align: center;
+        font-size: 30px;
+        line-height: 74px;
+        background: rgba(0, 0, 0, .2);
+        border-radius: 100%;
+    }
+</style>
+<style>
+    .dashbox_2 {
+        width: 100%;
+        float: left;
+        /*background-color: #0aa699;*/
+        color: #fff;
+        padding: 15px;
+        font-size: 12px;
+        margin-bottom: 20px;
+    }
+
+    .boxheading {
+        font-size: 18px;
+        color: #22262e;
+    }
+
+    .boxpart {
+        width: 100%;
+        float: left;
+        margin-top: 5px;
+        margin-bottom: 15px;
+    }
+
+        .boxpart li:first-child {
+            /*padding: 0;*/
+        }
+
+        .boxpart li {
+            float: left;
+            width: 120px;
+            border-right: #363a41 solid 1px;
+            padding-left: 15px;
+        }
+
+            .boxpart li h4 {
+                margin-top: 5px;
+            }
+
+    h4, .h4 {
+        font-size: 18px;
+    }
+
+    /*................................seller DASHBORAD CSS...................................*/
+
+    .heading_dfg {
+        /*background: #6eee6c;*/
+        color: #000;
+        padding: 5px;
+        font-size: 2em;
+        text-align: center;
+        margin-bottom: 10px;
+        margin-top: 14px;
+    }
+
+    .box_hiding_second {
+        background-color: #006594;
+        color: #fff;
+        padding: 2px;
+        text-align: center;
+    }
+
+    .table_border {
+        border: 1px solid #83bfdb;
+    }
+
+    .box_side_q1 {
+        border: 1px solid #83bfdb;
+        width: 100%;
+        height: 150px;
+        overflow-x: auto;
+        text-align: center;
+    }
+
+    .box_side_q1 {
+    }
+
+    .border_div3 {
+        margin-top: 17%;
+    }
+
+    .border_div15 {
+        height: 180px;
+        margin-top: 17%;
+    }
+
+    body {
+        background-color: #Ececda;
+    }
+
+    table.dataTable thead .sorting:after,
+    table.dataTable thead .sorting:before,
+    table.dataTable thead .sorting_asc:after,
+    table.dataTable thead .sorting_asc:before,
+    table.dataTable thead .sorting_asc_disabled:after,
+    table.dataTable thead .sorting_asc_disabled:before,
+    table.dataTable thead .sorting_desc:after,
+    table.dataTable thead .sorting_desc:before,
+    table.dataTable thead .sorting_desc_disabled:after,
+    table.dataTable thead .sorting_desc_disabled:before {
+        bottom: .5em;
+    }
+
+    .table {
+        margin-bottom: 0;
+    }
+</style>
+
+@*<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>*@
+@*<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>*@
+
+
+
+<div class="container-fluid">
+    <div class="">
+        <div class="row">
+            <div class="col-lg-12 col-xs-12">
+                <div class="heading_dfg">Admin Dashboard</div>
+                <div class="row">
+                    <div class="col-lg-12 col-sm-12">
+                        <div class="row">
+                            <div class="col-lg-2 col-sm-12">
+                                <div class="heading_dfg">Banner</div>
+                                <div class="box_shadow_dash_sh1" style="background: #913707;">
+                                    <div class="">
+                                        <div class="hiding_sales_div_text2" style="color: #fff">
+                                            <div>
+                                                <h2> <a href="~/Admin/BannerList" style="color:white;"> </a></h2>
+                                                @*<h2> (@ViewBag.Banner) </h2>*@
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-sm-12">
+                                <div class="heading_dfg">Testimonials</div>
+                                <div class="box_shadow_dash_sh1" style="background: #21d0b2; ">
+                                    <div class="">
+                                        <div class="hiding_sales_div_text2" style="color: #fff">
+                                            <div>
+                                                <h2> <a href="~/Admin/Testimonial" style="color:white;"> </a></h2>
+                                                @*<h2> (@ViewBag.Testimonials) </h2>*@
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-sm-12">
+                                <div class="heading_dfg">Product Category</div>
+                                <div class="box_shadow_dash_sh1" style="background: #915907;">
+                                    <div class="">
+                                        <div class="hiding_sales_div_text2" style="color:#fff">
+                                            <div>
+                                                <h2> <a href="~/Admin/ProductCategoryList" style="color:white;"> </a></h2>
+                                                @*<h2> (@ViewBag.TotalProductCat) </h2>*@
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-sm-12">
+                                <div class="heading_dfg">Products</div>
+                                <div class="box_shadow_dash_sh1" style="background: #918F07; ">
+                                    <div class="">
+                                        <div class="hiding_sales_div_text2" style="color:#fff">
+                                            <div>
+                                                @*<h2> <a href="~/Jobreview/countregularjob" style="color:white;">(@ViewBag.countregularjob) </a></h2>*@
+                                                <h2> <a href="~/Admin/ProductMaster" style="color:white;"> </a></h2>
+                                                @*<h2>(@ViewBag.TotalProduct)</h2>*@
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-sm-12">
+                                <div class="heading_dfg">Best Product</div>
+                                <div class="box_shadow_dash_sh1" style="background: #e87317; ">
+                                    <div class="">
+                                        <div class="hiding_sales_div_text2" style="color:#fff">
+                                            <div>
+                                                @*<h2> <a href="~/Jobreview/countregularjob" style="color:white;">(@ViewBag.countregularjob) </a></h2>*@
+                                                <h2> <a href="~/Admin/BestProduct" style="color:white;"> </a></h2>
+                                                @*<h2>(@ViewBag.TotalBestProduct)</h2>*@
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-sm-12">
+                                <div class="heading_dfg">Featured Product</div>
+                                <div class="box_shadow_dash_sh1">
+                                    <div class="">
+                                        <div class="hiding_sales_div_text2" style="color:#fff">
+                                            <div>
+                                                <h2> <a href="~/Admin/FeaturedProduct" style="color:white;"> </a></h2>
+                                                @*<h2> (@ViewBag.TotalFeaturedProduct) </h2>*@
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-2 col-sm-12">
+                                <div class="heading_dfg">Icons</div>
+                                <div class="box_shadow_dash_sh1" style="background: #079161; ">
+                                    <div class="">
+                                        <div class="hiding_sales_div_text2" style="color:#fff">
+                                            <div>
+                                                @*<h2> <a href="~/Jobreview/countregularjob" style="color:white;">(@ViewBag.countregularjob) </a></h2>*@
+                                                <h2> <a href="~/Admin/IconsList" style="color:white;"> </a></h2>
+                                                @*<h2>(@ViewBag.TotalProduct)</h2>*@
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                          
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

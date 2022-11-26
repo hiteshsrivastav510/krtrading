@@ -1,0 +1,11 @@
+﻿
+@{ int TotalRecords = Convert.ToInt32(ViewBag.TotalRecords);
+    int PageSize = Convert.ToInt32(ViewBag.PageSize);
+    PageSize = PageSize == 0 ? TotalRecords : PageSize;
+    int PageDifference = Convert.ToInt32(Math.Ceiling(Convert.ToDecimal(TotalRecords) / Convert.ToDecimal(PageSize)));
+}
+@if (TotalRecords > 0)
+{
+    <span id="spnPageBatch" style="display:none">1</span>
+    <span>Page  <span id="spnPageNo">1</span></span>
+}

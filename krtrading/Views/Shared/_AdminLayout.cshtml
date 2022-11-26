@@ -1,0 +1,319 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K.R Trading Co.</title>
+    <link rel="icon" href="~/Images/dna logo.jpg" />
+    <link href="~/New/css/font-awesome.css" rel="stylesheet" />
+    <link href="~/New/css/lightbox.css" rel="stylesheet" />
+    <link href="~/New/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/New/css/admin.css" rel="stylesheet" />
+    <link href="~/New/css/EditCss.css" rel="stylesheet" />
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <link href="~/New/css/jquery-ui.css" rel="stylesheet" />
+    <script src="~/New/js/jquery-ui-1.9.2.custom.min.js"></script>
+
+    <script src="~/New/js/jquery-2.2.4.min.js"></script>
+    <script src="~/New/js/bootstrap.min.js"></script>
+    @*<script src="~/New/js/lightbox.min.js"></script>*@
+
+    <link href="~/New/css/lightbox.css" rel="stylesheet" />
+    @*<link href="~/New/assets/css/jquery.datetimepicker.css" rel="stylesheet" />
+        <link href="~/New/css/jquery.datetimepicker.css" rel="stylesheet" />
+        <script src="~/New/js/jquery.datetimepicker.full.js"></script>*@
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
+    @*<link rel="stylesheet" href="/resources/demos/style.css" />*@
+
+    @*<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>*@
+    <script src="~/New/js/jquery.dataTables.min.js"></script>
+    <script src="~/New/js/dataTables.bootstrap.min.js"></script>
+
+    <script src="~/New/js/datepicker.bootstrap.js"></script>
+    <script src="~/New/js/jquery.datetimepicker.full.js"></script>
+    <link href="~/New/css/datepicker_single_calender.css" rel="stylesheet" />
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>-->
+    <!-- Preloader -->
+    @*<link href="~/DatetimePicker/jquery.datetimepicker.css" rel="stylesheet" />
+        <script src="~/DatetimePicker/jquery.datetimepicker.full.min.js"></script>*@
+
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <script>
+        $(document).ready(function () {
+            $('.menuopen').hide();
+            $('.menuclose').click(function () {
+                $('.header').addClass('leftslidemenu');
+                $('.rightview').addClass('leftslideview');
+                $('.menuclose').hide();
+                $('.menuopen').show();
+            });
+            $('.menuopen').click(function () {
+                $('.header').removeClass('leftslidemenu');
+                $('.rightview').removeClass('leftslideview');
+                $('.menuclose').show();
+                $('.menuopen').hide();
+            });
+            $('.collapse').on('show.bs.collapse', function () {
+                $(this).parent().find('.myrightarw').removeClass('fa-chevron-right').addClass('fa-chevron-down');
+            });
+            $('.collapse').on('hide.bs.collapse', function () {
+                $(this).parent().find('.myrightarw').removeClass('fa-chevron-down').addClass('fa-chevron-right');
+            });
+        });
+    </script>
+    <script>
+        $(window).on('load', function () { // makes sure the whole site is loaded
+            $('#status').fadeOut(); // will first fade out the loading animation
+            $('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website.
+            $('body').delay(350).css({ 'overflow': 'visible' });
+        })
+    </script>
+
+    <style>
+        .panel-group {
+            margin-bottom: 10px;
+            height: 90%;
+            overflow-y: scroll;
+        }
+
+            .panel-group::-webkit-scrollbar {
+                width: 10px;
+            }
+
+            .panel-group::-webkit-scrollbar-track {
+                background: #000;
+            }
+
+            .panel-group::-webkit-scrollbar-thumb {
+                background: #888;
+            }
+
+                .panel-group::-webkit-scrollbar-thumb:hover {
+                    background: #888;
+                }
+
+        .radio-bx-container {
+            display: block;
+            position: relative;
+            padding-left: 35px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            font-size: 22px;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            color: #333;
+            font-weight: normal;
+        }
+
+            /* Hide the browser's default radio button */
+            .radio-bx-container input {
+                position: absolute;
+                opacity: 0;
+                cursor: pointer;
+            }
+
+        /* Create a custom radio button */
+        .checkmark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 25px;
+            width: 25px;
+            background-color: #c1bbbb;
+            border-radius: 50%;
+        }
+
+        /* On mouse-over, add a grey background color */
+        .radio-bx-container:hover input ~ .checkmark {
+            background-color: #ccc;
+        }
+
+        /* When the radio button is checked, add a blue background */
+        .radio-bx-container input:checked ~ .checkmark {
+            background-color: #2196F3;
+        }
+
+        /* Create the indicator (the dot/circle - hidden when not checked) */
+        .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+
+        /* Show the indicator (dot/circle) when checked */
+        .radio-bx-container input:checked ~ .checkmark:after {
+            display: block;
+        }
+
+        /* Style the indicator (dot/circle) */
+        .radio-bx-container .checkmark:after {
+            top: 9px;
+            left: 9px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: white;
+        }
+    </style>
+</head>
+<!-- Preloader -->
+
+<body>
+    <div id="preloader">
+        <div id="status">&nbsp;</div>
+    </div>
+
+    <div class="tophead" style="background-color: #084876; ">
+        <div class="col-md-2 col-sm-2 padding0">
+            <a href="/Admin/Index">
+                <p style="color:#FFF;font-size:28px;font-weight:400;">
+                    <img src="~/Images/Logo1.jpeg" style=" margin-left:30px;width:175px;"  />
+                </p>
+            </a>
+        </div>
+        <div class="col-md-1 col-sm-1">
+            <span class="glyphicon glyphicon-menu-hamburger menuclose"></span>
+            <span class="glyphicon glyphicon-remove menuopen"></span>
+        </div>
+        <div class="col-md-2 col-sm-2 pull-right">
+            <ul class="adminbtn">
+                <li>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        @Session["name"]
+                        <img src="~/Images/userimage.jpg" class="img-circle" width="40" height="40" />
+
+                        <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="@Url.Action("ChangePassword", "Admin")" style=" font-size 16px;"><i class="fa fa-lock"></i>Change Password</a></li>
+                        <li><a href="@Url.Action("Logout", "Home")" style=" font-size 16px;"><i class="fa fa-fw fa-power-off"></i>Sign Out</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-1 col-sm-1 pull-right" style="margin-top:15px;display:none;">
+            <span id="CountDownLabel" style="color:white;font-size:16px;text-decoration:double;"></span>
+        </div>
+
+    </div>
+    <header class="header">
+        <div class="panel-group" id="sidemenu">
+
+            @*<div class="panel panel-default">
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            <a href="/Dashborad">
+                                <i class="fa fa-location-arrow"></i>Dash
+                            </a>
+                        </div>
+                    </div>
+                </div>*@
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="panel-title">
+                        <a href="~/Admin/Index" style="color:white;">
+                            <i class="fa fa-location-arrow"></i>Home
+                            <i class="fa fa-chevron-right myrightarw"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="panel-heading">
+                    <div class="panel-title">
+                        <a href="~/Admin/AboutList" style="color:white;">
+                            <i class="fa fa-location-arrow"></i>About Us
+                            <i class="fa fa-chevron-right myrightarw"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="panel-heading">
+                    <div class="panel-title">
+                        <a href="~/Admin/BannerList" style="color:white;">
+                            <i class="fa fa-location-arrow"></i>Banner
+                            <i class="fa fa-chevron-right myrightarw"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="panel-heading">
+                    <div class="panel-title">
+                        <a href="~/Admin/ProductCategoryList" style="color:white;">
+                            <i class="fa fa-location-arrow"></i>Product Category
+                            <i class="fa fa-chevron-right myrightarw"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="panel-heading">
+                    <div class="panel-title">
+                        <a href="~/Admin/Testimonial" style="color:white;">
+                            <i class="fa fa-location-arrow"></i>Testimonial Master
+                            <i class="fa fa-chevron-right myrightarw"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="panel-heading">
+                    <div class="panel-title">
+                        <a href="~/Admin/ProductMaster" style="color:white;">
+                            <i class="fa fa-location-arrow"></i>Product
+                            <i class="fa fa-chevron-right myrightarw"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="panel-heading">
+                    <div class="panel-title">
+                        <a href="~/Admin/IconsList" style="color:white;">
+                            <i class="fa fa-location-arrow"></i>Icons
+                            <i class="fa fa-chevron-right myrightarw"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="panel-heading">
+                    <div class="panel-title">
+                        <a href="~/Admin/IPForLoginMenu" style="color:white;">
+                            <i class="fa fa-location-arrow"></i>IP For Login Menu
+                            <i class="fa fa-chevron-right myrightarw"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            @*<div class="panel panel-default">
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            <a data-toggle="collapse" data-parent="#menu_1" href="#menu_1" style="color:white;" aria-expanded="false">
+                                <i class="fa fa-location-arrow"></i>Master
+                                <i class="fa fa-chevron-right myrightarw"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div id="menu_1" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <ul class="hovermenu">
+
+                                <li><a href="~/Admin/AboutList">AboutUs</a></li>
+                                <li><a href="~/Admin/BannerList">Banner</a></li>
+                                <li><a href="~/Admin/ProductCategoryList">Product Category</a></li>
+                                <li><a href="~/Admin/Testimonial">Testimonial Master</a></li>
+                                <li><a href="~/Admin/ProductMaster">Product</a></li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>*@
+
+
+        </div>
+    </header>
+
+    <div class="rightview">
+
+        @RenderBody()
+    </div>
+
+</body>
+
+</html>

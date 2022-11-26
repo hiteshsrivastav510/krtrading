@@ -1,0 +1,275 @@
+﻿
+@{
+    ViewBag.Title = "BannerList";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    WebGrid grid = new WebGrid(Model, canPage: false);
+    TimeZoneInfo est = TimeZoneInfo.FindSystemTimeZoneById("India Standard Time");
+}
+<style>
+    .Column1Class {
+        text-transform: uppercase;
+    }
+</style>
+
+<style>
+    table.dataTable thead .sorting:after,
+    table.dataTable thead .sorting:before,
+    table.dataTable thead .sorting_asc:after,
+    table.dataTable thead .sorting_asc:before,
+    table.dataTable thead .sorting_asc_disabled:after,
+    table.dataTable thead .sorting_asc_disabled:before,
+    table.dataTable thead .sorting_desc:after,
+    table.dataTable thead .sorting_desc:before,
+    table.dataTable thead .sorting_desc_disabled:after,
+    table.dataTable thead .sorting_desc_disabled:before {
+        bottom: .5em;
+    }
+
+    .table {
+        margin-bottom: 0;
+        width: 100% !important;
+    }
+
+    th {
+        width: auto;
+    }
+</style>
+@if (TempData["ErorrMessage"] == "Insert")
+{
+    <div class="alert alert-success">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong>Alert!</strong>  Insert  successful.
+    </div>
+}
+else if (TempData["ErorrMessage"] == "FalseDelete")
+{
+    <div class="alert alert-success">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong>Alert!</strong>  Remove Data successfully
+    </div>
+}
+else if (TempData["ErorrMessage"] == "NotInsert")
+{
+    <div class="alert alert-danger">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong></strong>Record Not Inserted.
+    </div>
+}
+else if (TempData["ErorrMessage"] == "NotDelete")
+{
+    <div class="alert alert-danger">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong></strong>Record Not Inserted.
+    </div>
+}
+<h4 class="title">Banner Master</h4>
+<div class="col-lg-12">
+    <div class="col-md-8">
+        <div style="margin-top: 15px; margin-left:1em;">
+            <span>Total Records:- @ViewBag.Total</span>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div style="text-align: right;margin-top: 1em;">
+            <a class="btn btn-primary" onclick="CheckStockStatus12();"> <i class="fa fa-plus-square"></i> Add Banner</a>
+
+        </div>
+    </div>
+
+</div>
+
+
+<div class="col-sm-12">
+    @grid.GetHtml(
+                                            tableStyle: "table table-bordered table-striped table-hover", // applying style on grid
+                                   fillEmptyRows: false,
+
+                                   headerStyle: "tblheadclr1", //applying style.
+                                   footerStyle: "grid-footer", //applying style.
+                                   mode: WebGridPagerModes.All, //paging to grid
+                                   firstText: "<< First",
+                                   previousText: "< Prev",
+                                   nextText: "Next >",
+                                   lastText: "Last >>",
+                                   columns: new[]  // colums in grid
+                                   {
+                                        grid.Column(header: "S.No.", format: item => item.WebGrid.Rows.IndexOf(item) + 1 + Math.Round(Convert.ToDecimal(grid.TotalRowCount / grid.PageCount) / grid.RowsPerPage) * grid.RowsPerPage * grid.PageIndex, canSort: true),
+
+
+grid.Column(columnName:"Banner Image",header:"Banner Image",format:
+@<text>
+    <a href="@item.BannerImg" target="_blank">
+        <img src="@item.BannerImg" width="50px" height="50px" />
+    </a>
+</text>
+),
+
+
+grid.Column(columnName:"Sequence",header:"Sequence",format:
+@<text>
+    <a href="#" onclick="upfunction(@item.id)" class="btn-sm btn-success">
+        <i class="fa fa-arrow-up"></i>
+    </a>
+
+    <a href="#" onclick="downfunction(@item.id)" class="btn-sm filter-color" style="margin-left:10px;">
+        <i class="fa fa-arrow-down"></i>
+    </a>
+</text>
+),
+
+grid.Column(columnName: "Delete", header: "Delete", format:
+@<text>
+    <a href="/Admin/DeleteBanner?id=@item.id" onclick="return confirm('Are you sure want to delete this?')" class="btn-sm btn-info" style="background:red;">
+        <i class="fa fa-trash-o"></i>
+    </a>
+</text>),
+
+
+})
+
+
+</div>
+
+<div class="modal fade" id="myModalText124" tabindex="-1" role="dialog" aria-labelledby="myModalLabeltext">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myModalLabel">Add Banner Master</h4>
+
+            </div>
+            <div class="modal-body">
+
+                <div id="myModalContenttext124">
+
+
+                </div>
+
+            </div>
+            <div class="clearfix"></div>
+
+            <div class="modal-footer">
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+@{
+    <script>
+        function CheckStockStatus12() {
+            debugger
+            var TeamDetailPostBackURL = '/Admin/AddBanner';
+            $.ajax({
+                type: "GET",
+                url: TeamDetailPostBackURL,
+                contentType: "application/json; charset=utf-8",
+                datatype: "json",
+                success: function (data) {
+
+                    $('#myModalContenttext124').html(data);
+                    $('#myModalText124').modal('show');
+
+                },
+                error: function () {
+                    alert("Dynamic content load failed.");
+                }
+            });
+            $("#closbtn").click(function () {
+                $('#myModalText124').modal('hide');
+            });
+
+
+        }
+    </script>
+    @*<script>
+
+            $(document).ready(function () {
+                $('.table').DataTable({
+                    aLengthMenu: [
+                        [5000, -1],
+                        [5000, "All"]
+                    ],
+                    'iDisplayLength': 5000,
+                    responsive: true
+                });
+            });
+
+        </script>*@
+
+    <script>
+
+        $(document).ready(function () {
+            $('.table').DataTable({
+                //alengthmenu: [
+                //    [25,50,75,100, -1],
+                //    [25,50,75,100, "all"]
+                //    // [5000, -1],
+                //    //[5000, "All"]
+                //],
+                "lengthMenu": [ [25, 50,75,100, -1], [25, 50,75,100, "All"] ],
+                //"lengthMenu": [ 25, 50, 75, 100,"All" ],
+                'iDisplayLength': 25,
+                //'iDisplayLength': 5000,
+                responsive: true,
+                "scrollX": true,
+                "scrollY": 350,
+                "scrollCollapse": true,
+            });
+        });
+
+    </script>
+    <script>
+        function upfunction(id) {
+            var TeamDetailPostBackURL = '/Admin/upBanner';
+            $.ajax({
+                type: "GET",
+                url: TeamDetailPostBackURL,
+                contentType: "application/json; charset=utf-8",
+                data: { "Id": id },
+                datatype: "json",
+                success: function (data) {
+                    if (data == "Success") {
+                        alert("Sequence Up Successfully");
+                        window.location.reload();
+                    }
+                    else {
+                        alert("Sequence Not Up");
+                        window.location.reload();
+                    }
+                },
+                error: function () {
+                    alert("Dynamic content load failed.");
+                }
+            });
+
+        }
+        function downfunction(id) {
+            var TeamDetailPostBackURL = '/Admin/downBanner';
+            $.ajax({
+                type: "GET",
+                url: TeamDetailPostBackURL,
+                contentType: "application/json; charset=utf-8",
+                data: { "Id": id },
+                datatype: "json",
+                success: function (data) {
+                    if (data == "Success") {
+                        alert("Sequence Down Successfully");
+                        window.location.reload();
+                    }
+                    else {
+                        alert("Sequence Not Down");
+                        window.location.reload();
+                    }
+                },
+                error: function () {
+                    alert("Dynamic content load failed.");
+                }
+            });
+
+        }
+    </script>
+}
+
+
