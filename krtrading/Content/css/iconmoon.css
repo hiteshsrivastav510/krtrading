@@ -1,0 +1,156 @@
+@font-face {
+    font-family: 'icomoon';
+    src:    url('../fonts/icomoon.eot?j452uw');
+    src:    url('../fonts/icomoon.eot?j452uw#iefix') format('embedded-opentype'),
+        url('../fonts/icomoon.ttf?j452uw') format('truetype'),
+        url('../fonts/icomoon.woff?j452uw') format('woff'),
+        url('../fonts/icomoon.svg?j452uw#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon','FontAwesome' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-cart:before {
+    content: "\e90a";
+}
+.icon-clock:before {
+    content: "\e90b";
+}
+.icon-mobile:before {
+    content: "\e90c";
+}
+.icon-play:before {
+    content: "\e909";
+}
+.icon-Cart:before {
+    content: "\e907";
+}
+.icon-media:before {
+    content: "\e904";
+}
+.icon-news:before {
+    content: "\e905";
+}
+.icon-offer:before {
+    content: "\e906";
+}
+.icon-upcoming:before {
+    content: "\e903";
+}
+.icon-arrow:before {
+    content: "\e800";
+}
+.icon-about:before {
+    content: "\e801";
+}
+.icon-agri:before {
+    content: "\e802";
+}
+.icon-anievent:before {
+    content: "\e803";
+}
+.icon-arrow2:before {
+    content: "\e804";
+}
+.icon-assure:before {
+    content: "\e805";
+}
+.icon-award:before {
+    content: "\e806";
+}
+.icon-bodycare:before {
+    content: "\e807";
+}
+.icon-business:before {
+    content: "\e808";
+}
+.icon-calendar:before {
+    content: "\e809";
+}
+.icon-cardio:before {
+    content: "\e80a";
+}
+.icon-detox:before {
+    content: "\e80b";
+}
+.icon-family:before {
+    content: "\e80c";
+}
+.icon-fb:before {
+    content: "\e80d";
+}
+.icon-fitness:before {
+    content: "\e80e";
+}
+.icon-foriegn2:before {
+    content: "\e900";
+}
+.icon-foriegn:before {
+    content: "\e80f";
+}
+.icon-health:before {
+    content: "\e810";
+}
+.icon-idol:before {
+    content: "\e811";
+}
+.icon-immunity:before {
+    content: "\e812";
+}
+.icon-init-program2:before {
+    content: "\e901";
+}
+.icon-init-program:before {
+    content: "\e813";
+}
+.icon-joints:before {
+    content: "\e814";
+}
+.icon-leadership:before {
+    content: "\e815";
+}
+.icon-mgmt:before {
+    content: "\e816";
+}
+.icon-millanior2:before {
+    content: "\e902";
+}
+.icon-millanior:before {
+    content: "\e817";
+}
+.icon-miscall:before {
+    content: "\e818";
+}
+.icon-oralcare:before {
+    content: "\e819";
+}
+.icon-pause:before {
+    content: "\e81a";
+}
+.icon-search:before {
+    content: "\e81b";
+}
+.icon-selfseries:before {
+    content: "\e81c";
+}
+.icon-twitter:before {
+    content: "\e81d";
+}
+.icon-profile:before {
+    content: "\e908";
+}
+

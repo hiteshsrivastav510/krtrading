@@ -1,0 +1,279 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+  
+    <meta name="description" content="K. R Trading Co. was founded on 20 Sep 2019.We are pleased to introduce ourselves as a renowned laboratory traders and supplier of Scientific Equipment, Diagnostic Lab Equipments, Laboratory Chemicals, Lab Plasticware, Laboratory Glassware, Reagents, Elisa Kits, Antibodies and offer various services i.e primer Synthesis, peptide synthesis, gene synthesis, Sanger sequencing, Next Generation Sequencing, RT PCR Probes etc." />
+    <meta name="keywords" content="Best Lab Products and Chemicals" />
+    <link rel="canonical" href="https://www.krtradingcoasr.com/" />
+    <title>Best Laboratory Products and Chemicals - K.R Trading Co.</title>
+}
+
+<style>
+    marquee {
+        color: blue;
+    }
+
+        marquee ul {
+            display: flex;
+            list-style: none;
+        }
+
+            marquee ul li {
+                float: left;
+                margin: 0 0 0 2em;
+            }
+
+                marquee ul li img {
+                    height: 100px;
+                    width: 100px;
+                }
+</style>
+
+@*<style>
+        marquee img {
+            display: flex;
+            float: left;
+            margin-right: 2em;
+            height: 100px;
+            width: 100px;
+        }
+    </style>*@
+<style>
+    .load {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        text-align: center;
+        align-self: center;
+        background-color: rgba(0,0,0,0.4);
+        z-index: 100000;
+    }
+</style>
+
+<section class="homeslider" style="padding-top:1em;">
+    <div class="carousel slide" data-ride="carousel" id="slider">
+
+        <div class="carousel-inner">
+            
+
+                    <div class="item active">
+                        <img src="~/Images/Robot.jpg" width="100%" alt="banner" />
+                    </div>
+               
+
+                    <div class="item ">
+                        <img src="~/Images/Robot.jpg" width="100%" alt="banner" />
+                    </div>
+
+              
+
+        </div>
+
+        @*<div class="carousel-inner">
+                <div class="item active"><img src="~/images/slider/WhatsApp Image 2020-12-29 at 9.27.16 PM.jpeg" width="100%" /></div>
+                <div class="item "><img src="~/images/slider/WhatsApp Image 2020-12-29 at 9.27.21 PM (1).jpeg" width="100%" /></div>
+                <div class="item "><img src="~/images/slider/WhatsApp Image 2020-12-29 at 9.27.21 PM.jpeg" width="100%" /></div>
+                <div class="item "><img src="~/images/slider/WhatsApp Image 2020-12-29 at 9.27.22 PM.jpeg" width="100%" /></div>
+            </div>*@
+
+        <a class="left carousel-control" href="#slider" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a class="right carousel-control" href="#slider" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+    </div>
+</section>
+
+<div class="container-fluid">
+
+    <div class="companyPage">
+
+        <div>
+
+            <div class="container">
+
+                @*<div class="col-md-7 col-sm-7 col-xs-12">
+                        <div class="abouttext">
+                            <img src="~/images/product/left-img.jpg" width="100%" />
+                        </div>
+                    </div>*@
+                <div>
+                    <div class="abouttext">
+                        <h1 class="headings"></h1>
+                        <div class="row">
+                            <div class="col-xs-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2" style="text-align:center;">
+                                <h1 style="background-color:#fff;color:#000;text-align:center;">K.R. Trading Co.</h1>
+
+
+                                <p style="text-align:justify;">K. R Trading Co. was founded on 20 Sep 2019.We are pleased to introduce ourselves as a renowned laboratory traders and supplier of Scientific Equipment, Diagnostic Lab Equipments, Laboratory Chemicals, Lab Plasticware, Laboratory Glassware, Reagents, Elisa Kits, Antibodies and offer various services i.e primer Synthesis, peptide synthesis, gene synthesis, Sanger sequencing, Next Generation Sequencing, RT PCR Probes etc. We have an up to 15years of experience in this field. </p>
+
+                                <a href="~/Home/About" class="readmore" style="color: #fff !important;">Read More</a> <br />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+          <div class="container-fluid">
+                <div style="background-color:#fff;">
+                    <section class="allDiv">
+                        <div class="container">
+                            <div class="serviceboxbg">
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <div class="typesofCategories">
+                                        <h4 class="headings" align="center"> Best Selling Product</h4>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <div class="own-carousel owl-theme Feature">
+
+                                          <div class="item">
+                                                <div class="servicebox">
+                                                    <div class="serviceimage">
+                                                        <a href="~/Home/products_details?ProductCode=">
+                                                            <img src="https://www.krtradingcoasr.com/Robot1.jpg" height="150" alt="Product_Image" />
+
+                                                            <div class="serviceimagehvr">View</div>
+                                                        </a>
+                                                    </div>
+                                                    <ul class="slidrproductdetails">
+                                                        <li><h1></h1></li>
+
+                                                        @*<li><span class="Price">@Item2.SellingPrice</span><span class="Pricecut">@Item2.MRP</span></li>*@
+                                                        @*<li><a href="/Home/AddToCart?ProductId=@Item2.Id" class="btn btnadtocart">Add to Cart</a></li>*@
+
+                                                        @*<a class="btncart" style="cursor:pointer" onclick="Addtocartjquery(@item1.ProductWeightId,@item1.ProductId);" id="btncart_@item1.ProductId">
+                                                                Add to Cart
+                                                            </a>*@
+
+                                                        @*<li><a onclick="Addtocartjquery(@Item2.Id);" class="btn btnadtocart">Add to Cart</a></li>*@
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        
+         <div class="container-fluid">
+                <div style="background-color:#fff;">
+                    <section class="allDiv">
+                        <div class="container">
+                            <div class="serviceboxbg">
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <div class="typesofCategories">
+                                        <h4 class="headings" align="center">Feature Product</h4>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <div class="own-carousel owl-theme Feature">
+
+                                          <div class="item">
+                                                <div class="servicebox">
+                                                    <div class="serviceimage">
+                                                        <a href="~/Home/products_details?ProductCode=">
+                                                            <img src="~/Images/Robot.jpg" height="150" alt="Product_Image" />
+                                                          
+                                                            <div class="serviceimagehvr">View</div>
+                                                        </a>
+                                                    </div>
+                                                    <ul class="slidrproductdetails">
+                                                        <li><h1></h1></li>
+
+                                                        @*<li><span class="Price">@Item3.SellingPrice</span><span class="Pricecut">@Item3.MRP</span></li>*@
+                                                        @*<li><a href="/Home/AddToCart?ProductId=@Item3.Id" class="btn btnadtocart">Add to Cart</a></li>*@
+                                                        @*<li><a onclick="Addtocartjquery1(@Item3.Id);" class="btn btnadtocart">Add to Cart</a></li>*@
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        
+    </div>
+</div>
+
+
+    <section class="bg-pr">
+        <div class="container-fluid">
+            <div class="aboutcontentbg">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="testimonialbg">
+                        <h1 class="headings">testimonial</h1>
+                        <div class="own-carousel owl-theme testimonial">
+
+                        
+
+                                <div class="item">
+                                    <div class="textimonialbox">
+                                        <img src="https://www.krtradingcoasr.com/Images/man.png" class="sayingimg" alt="man_Image" />
+                                        <h4></h4>
+                                        <div class="row">
+                                            <div class="col-md-4"></div>
+                                            <div class="col-md-4">
+                                                <p style="text-align:justify;"></p>
+                                            </div>
+                                            <div class="col-md-4"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <div class="container-fluid">
+        <div style="background-color:#fff;">
+            <section class="allDiv">
+                <div class="container">
+                    <div class="serviceboxbg">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="typesofCategories">
+                                <h4 class="headings" align="center"> Our Principal's</h4>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <marquee>
+                                <ul>
+                                   
+                                        <li><img src="https://www.krtradingcoasr.com/" /></li>
+                                    
+                                </ul>
+                            </marquee>
+
+                            @*<marquee>
+                                    @foreach (var item in ExistIcons)
+                                    {
+                                        <img src="@item.IconImg" />
+                                    }
+                                </marquee>*@
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
