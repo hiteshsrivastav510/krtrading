@@ -750,6 +750,7 @@
     <Content Include="New\css\animations.css" />
     <Content Include="New\css\bootstrap.css" />
     <Content Include="New\css\bootstrap.min.css" />
+    <Content Include="New\css\BootstrapPagination.css" />
     <Content Include="New\css\dataTables.bootstrap.min.css" />
     <Content Include="New\css\datepicker_single_calender.css" />
     <Content Include="New\css\EditCss.css" />
