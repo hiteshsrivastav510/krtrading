@@ -7,5 +7,19 @@
 @if (TotalRecords > 0)
 {
     <span id="spnPageBatch" style="display:none">1</span>
-    <span>Page  <span id="spnPageNo">1</span></span>
+    <span>Page  <span id="spnPageNo">1</span>  of @PageDifference  <span>&nbsp;&nbsp;| &nbsp; Total Records: @TotalRecords</span></span>
+    <nav aria-label="Pgae navigation example" style="margin-top:10px">
+        <ul class="Pagination">
+            <li class="page=item disabled"><a class="page-link pageFirst" href="javascript:void(0)" title="First" data-value="1">First</a></li>
+            <li class="page=item disabled"><a class="page-link pagePrev" href="javascript:void(0)" title="Previous">Previous</a></li>
+            @for (int i = 1; i <= PageDifference; i++)
+            {
+                <li class="page-item fa-pagelines @(i == 1 ? "active" : "")" style="@(i <= 15 ? "" :"display:none;")">
+                    <a id="ach_page-@i" class="page-link page-number" href="javascript:void(0)" title="@i" data--value="@i">@i</a>
+                </li>
+            }
+            <li class="@("page-item "+(PageDifference==1? "disabled":""))"><a class="page-link pageNext" href="javascript:void(0)" title="Next">Next</a></li>
+            <li class="@("page-item "+(PageDifference==1? "disabled":""))"><a class="page-link pageLast" href="javascript:void(0)" title="Last" data-value="@PageDifference">Last</a></li>
+        </ul>
+    </nav>
 }
