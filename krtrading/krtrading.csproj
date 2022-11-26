@@ -173,6 +173,7 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="All Script\Procedure\BannerData.sql" />
     <Content Include="All Script\Table\create table About.sql" />
     <Content Include="All Script\Table\create table Banner.sql" />
     <Content Include="All Script\Table\create table ChangePasswordEmailLinks.sql" />
@@ -857,7 +858,6 @@
     <Content Include="Views\Admin\_Pagination.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="All Script\Procedure\" />
     <Folder Include="All Script\Setting\" />
     <Folder Include="App_Data\" />
     <Folder Include="Views\Home\" />
