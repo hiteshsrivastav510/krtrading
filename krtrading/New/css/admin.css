@@ -1,0 +1,903 @@
+﻿
+/*@import url('https://fonts.googleapis.com/css?family=Montserrat');*/
+
+body {
+    /*font-family: 'Montserrat', sans-serif;*/
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    color: #000;
+    /*background-color: #ecf0f5;*/
+    background-color: #ffffff;
+}
+
+a, a:hover, a:focus {
+    text-decoration: none;
+}
+
+ul, ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+/************************Header**********************************/
+.header {
+    width: 250px;
+    float: left;
+    background-color: #000;
+    position: fixed;
+    left: 0;
+    top: 50px;
+    height: 100%;
+    display: block !important;
+    transition: 0.5s;
+    margin-left: -250px;
+}
+
+
+.rightview {
+    width: 100%;
+    float: left;
+    padding-top: 50px;
+    transition: 0.5s;
+}
+
+.leftslidemenu {
+    margin-left: 0;
+}
+
+.leftslideview {
+    padding-left: 250px;
+}
+
+.tophead {
+    width: 100%;
+    background-color: #e5e9ec;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    height: 50px;
+}
+
+.logo {
+    width: 250px;
+    display: block;
+    text-align: center;
+    background-color: #1a2226;
+}
+
+.menuclose, .menuopen {
+    font-size: 22px;
+    line-height: 50px;
+    float: left;
+    cursor: pointer;
+    color: #0090d9;
+    padding-left: 25px;
+}
+
+
+.logo:hover, .logo:focus {
+    color: #fff;
+}
+
+.topshortboxbg {
+    width: 100%;
+    float: left;
+}
+
+.topshortbox {
+    width: 100%;
+    float: left;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    border-radius: 2px;
+    margin-bottom: 15px;
+    padding: 0;
+    background-color: #fff;
+}
+
+    .topshortbox .fa {
+        width: 80px;
+        text-align: center;
+        line-height: 80px;
+        font-size: 40px;
+        color: #fff;
+    }
+
+.topshortboxtext {
+    color: #444;
+    width: calc(100% - 80px);
+    float: right;
+    padding-left: 15px;
+    text-transform: capitalize;
+    color: #000;
+    font-weight: bold;
+}
+
+    .topshortboxtext h4 {
+        font-size: 16px;
+        font-weight: normal;
+        color: #444;
+    }
+
+.mylead {
+    float: left;
+    margin-bottom: 15px;
+}
+
+    .mylead li {
+        float: left;
+        margin: 2px;
+    }
+
+        .mylead li a {
+            color: #fff;
+            background-color: #0090d9;
+            padding: 6px 12px;
+            text-transform: capitalize;
+            display: block;
+        }
+
+            .mylead li a:hover {
+                background-color: #1b1e24;
+            }
+
+.header .panel {
+    border: 0;
+    background-color: transparent;
+}
+
+.header .panel-heading {
+    padding: 0;
+    border-bottom: #023051 solid 1px;
+    background-color: transparent;
+}
+
+.header .panel-title a {
+    display: block;
+    color: #8b91a0;
+    font-size: 14px;
+    position: relative;
+    line-height: 35px;
+    padding-left: 35px;
+}
+
+    .header .panel-title a .fa {
+        position: absolute;
+        left: 10px;
+        top: 0;
+        line-height: 35px;
+        font-size: 17px;
+    }
+
+.myrightarw {
+    left: auto !important;
+    right: 10px;
+    font-size: 12px !important;
+}
+
+.header .panel-body {
+    padding: 0;
+    border: 0 !important;
+}
+
+.adminbtn {
+    float: right;
+}
+
+    .adminbtn li {
+        position: relative;
+        line-height: 50px;
+        float: left;
+    }
+
+        .adminbtn li:first-child {
+            margin-right: 20px;
+        }
+
+            .adminbtn li:first-child a {
+                font-size: 14px;
+            }
+
+        .adminbtn li a {
+            color: #fff;
+            display: block;
+        }
+
+        .adminbtn li ul {
+            left: auto;
+            right: 0;
+        }
+
+            .adminbtn li ul li a {
+                color: #444;
+                position: relative;
+                padding: 5px;
+                padding-left: 30px;
+                line-height: 25px;
+            }
+
+                .adminbtn li ul li a .fa {
+                    position: absolute;
+                    left: 10px;
+                    top: 10px;
+                }
+
+.hovermenu {
+    background-color: #2c3b41;
+    width: 100%;
+}
+
+    .hovermenu li {
+    }
+
+        .hovermenu li a {
+            display: block;
+            padding: 8px;
+            padding-left: 35px;
+            color: #fff;
+            font-size: 13px;
+        }
+
+            .hovermenu li a:hover {
+                background-color: #000;
+                color: #fff;
+            }
+
+
+.tophead .input-group {
+    margin-top: 8px;
+}
+
+.myaccount {
+    float: right;
+}
+
+    .myaccount li {
+        float: left;
+        line-height: 50px;
+        position: relative;
+    }
+
+        .myaccount li a {
+            color: #1b1e24;
+            font-weight: bold;
+        }
+
+        .myaccount li ul {
+            right: 0;
+            left: auto;
+            border-radius: 0;
+            margin: 0;
+            padding: 0;
+            background-color: #1b1e24;
+        }
+
+            .myaccount li ul:before {
+                content: "\f0d8";
+                position: absolute;
+                top: -5px;
+                right: 35px;
+                font-size: 45px;
+                line-height: 0;
+                font-family: fontawesome;
+            }
+
+            .myaccount li ul li {
+                line-height: 40px;
+                width: 100%;
+            }
+
+                .myaccount li ul li a {
+                    color: #fff;
+                    display: block;
+                    padding: 8px;
+                    font-weight: normal;
+                }
+
+                    .myaccount li ul li a:hover {
+                        background-color: #22262e;
+                        color: #fff;
+                    }
+
+.dashbox {
+    width: 100%;
+    float: left;
+    /*background-color: #0aa699;*/
+    background-color: #9e0a0a;
+    color: #fff;
+    padding: 15px;
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+.bgcolor0 {
+    background-color: #006594;
+}
+
+.bgcolor1 {
+    /*background-color: #0090d9;*/
+    background-color: #58508d;
+}
+
+.bgcolor2 {
+    /*background-color: #735f87;*/
+    background-color: #bc5090;
+}
+
+.bgcolor3 {
+    /*background-color: #00a65a;*/
+    background-color: #ff6361;
+}
+
+.bgcolor4 {
+    /*background-color: #f39c12;*/
+    background-color: #ffa600;
+}
+
+.bgcolor5 {
+    background-color: #036910 !important;
+}
+
+.bgcolor6 {
+    background-color: #494B68 !important;
+}
+
+.bgcolor7 {
+    background-color: #00b0f0 !important;
+}
+
+
+
+.boxheading {
+    font-size: 12px;
+    color: #22262e;
+}
+
+.boxpart {
+    width: 100%;
+    float: left;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+    .boxpart li {
+        float: left;
+        width: 100px;
+        border-right: #363a41 solid 1px;
+        padding-left: 15px;
+    }
+
+        .boxpart li:first-child {
+            padding: 0;
+        }
+
+        .boxpart li:last-child {
+            border: 0;
+        }
+
+        .boxpart li h4 {
+            margin-top: 5px;
+        }
+
+.dashbox span {
+    color: #1b1e24;
+}
+
+    .dashbox span b {
+        color: #fff;
+        font-weight: normal;
+    }
+
+.tblheadclr1, .tblheadclr1 a {
+    background-color: #0090d9;
+    color: #fff;
+    margin-left: auto;
+}
+
+.title {
+    width: 100%;
+    float: left;
+    font-size: 20px;
+    color: #222d32;
+    text-transform: uppercase;
+    margin: 0;
+    margin-bottom: 30px;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 1px;
+    margin-top: 15px;
+}
+
+    .title:after {
+        content: '';
+        display: block;
+        width: 50px;
+        /* border-bottom: #0090d9 solid 2px;*/
+        margin: 10px auto;
+    }
+
+.alldiv {
+    width: 100%;
+    float: left;
+}
+
+.formbox {
+    width: 100%;
+    float: left;
+    box-shadow: #adadad 0 0 5px;
+    padding: 10px 0;
+    padding-top: 0;
+}
+
+.innertitle {
+    width: 100%;
+    float: left;
+    text-align: center;
+    font-size: 20px;
+    color: #fff;
+    margin: 0;
+    margin-bottom: 30px;
+    font-weight: bold;
+    background-color: #0090d9;
+    line-height: 40px;
+    letter-spacing: 1px;
+}
+
+.myinput {
+    border: #777 solid 2px;
+    line-height: 40px;
+    height: 40px;
+    border-radius: 0;
+}
+
+.btn-excel {
+    background: #299910 !important;
+    color: white !important;
+}
+/*----------------------------------------------------*/
+
+.part_box {
+    width: 100%;
+    float: left;
+    border: #ccc solid 1px;
+    padding: 30px 15px;
+    position: relative;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    box-shadow: #bdaaaa 0 0 3px;
+}
+
+    .part_box .form-group {
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+.box_name {
+    display: inline-block;
+    color: red;
+    font-weight: 600;
+    text-transform: capitalize;
+    font-size: 14px;
+    position: absolute;
+    left: 10px;
+    top: -10px;
+    background-color: #fff;
+    padding: 0 5px;
+}
+
+.part_box_loop_text {
+    float: left;
+    width: 150px;
+}
+
+label {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.labelleft {
+    margin-left: 3%;
+}
+/*-----------------------Admin Dashboard---------------*/
+
+.buttin_im {
+    background: #804481;
+    color: #fff;
+    padding: 19px;
+}
+
+.box_side_left {
+    background: #fff;
+    border-radius: 10px;
+    color: #3d3d3d;
+    box-shadow: 0 3px 8px #00002947;
+    text-align: center;
+    margin: 10px 0px;
+    padding: 0px 10px;
+}
+
+
+a, a:hover, a:focus {
+    text-decoration: none;
+}
+
+.box_shadow_dash_sh1 {
+    background: #2b36df;
+    border-radius: 5px;
+    color: #3d3d3d;
+    box-shadow: 0 3px 8px #00002947;
+    text-align: center;
+    /*padding: 3px 10px;'
+         margin: 14px 0px;    */
+    padding: 0px;
+    height: 100px;
+    margin: 2%;
+}
+
+.box_shadow_sh {
+    background: #21d0b2;
+    border-radius: 10px;
+    color: #fff;
+    box-shadow: 0 3px 8px #00002947;
+    text-align: center;
+    margin: 10px 0px;
+}
+
+.col-lg-12 {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.hiding_sales {
+    text-align: center;
+    font-weight: bold;
+    padding: 2% 0%;
+}
+
+.box_side_left {
+    background: #fff;
+    border-radius: 10px;
+    color: #3d3d3d;
+    box-shadow: 0 3px 8px #00002947;
+    text-align: center;
+    margin: 10px 0px;
+    padding: 0px 10px;
+}
+
+.text_colour {
+    color: #e87317;
+}
+
+.heder_dash {
+    padding: 10px;
+}
+
+.sdsdsd {
+    text-align: center;
+}
+
+.box_side_den {
+    width: 100%;
+    height: 163px;
+    overflow-x: auto;
+    text-align: center;
+}
+
+.box_side_left {
+    background: #fff;
+    border-radius: 10px;
+    color: #3d3d3d;
+    box-shadow: 0 3px 8px #00002947;
+    text-align: center;
+    margin: 10px 0px;
+    padding: 0px 10px;
+}
+
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+
+
+.box_side_den_img {
+    width: 100%;
+    height: 188px;
+    overflow-x: auto;
+    text-align: center;
+}
+
+/*----------------------------------DashBoard------------------------*/
+
+.box_shadow {
+    background: #ff304f;
+    border-radius: 10px;
+    color: #fff;
+    box-shadow: 0 3px 8px #00002947;
+    text-align: center;
+    margin: 10px 0px;
+}
+
+.box_shadow_dash {
+    background: #fff;
+    border-radius: 10px;
+    color: #ccc;
+    box-shadow: 0 3px 8px #00002947;
+    text-align: center;
+    margin: 10px 0px;
+    height: 140PX;
+    padding: 10px 10px;
+}
+/*.........................................BUTTION..............................................*/
+.button {
+    border-radius: 4px;
+    background-color: #f4511e;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 14px;
+    padding: 7px;
+    width: 150px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.mt-div {
+    text-align: left;
+}
+
+.checkbox_div {
+    font-size: 26px;
+    margin-top: 3%;
+}
+
+input[type=checkbox] {
+    margin-top: 6%;
+}
+
+.client_detail {
+    margin-top: 7%;
+}
+
+.client_detail_1 {
+    margin-top: 4%;
+}
+
+.client_detail_2 {
+    margin-top: 3%;
+}
+
+.btn_div {
+    margin-top: 2%;
+}
+
+.button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+    .button span:after {
+        content: '\00bb';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.5s;
+    }
+
+.button:hover span {
+    padding-right: 25px;
+}
+
+    .button:hover span:after {
+        opacity: 1;
+        right: 0;
+    }
+
+
+/**********theme edit css***************/
+
+.panel-group {
+    margin-bottom: 10px;
+    height: 90%;
+    overflow-y: scroll;
+}
+
+    .panel-group::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    .panel-group::-webkit-scrollbar-track {
+        background: #033e68 !important;
+    }
+
+    .panel-group::-webkit-scrollbar-thumb {
+        background: #033e68;
+    }
+
+        .panel-group::-webkit-scrollbar-thumb:hover {
+            background: #888;
+        }
+
+
+.tblheadclr1, .tblheadclr1 a {
+    background-color: #f2f1f1;
+    color: #101010;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+label {
+    font-size: 14px;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #3c97e5;
+    border-color: #3c97e5;
+    box-shadow: #ddd 1px 1px 4px 1px;
+}
+
+th {
+    width: 240px;
+}
+
+table {
+    box-shadow: rgb(174 174 174 / 26%) 1px 1px 6px;
+    font-size: 13px;
+}
+
+.header {
+    background-color: #033e68;
+}
+
+.hovermenu {
+    background-color: #012b49;
+}
+
+
+
+    .hovermenu li a:hover {
+        background-color: #012037;
+    }
+
+.hiding_sales_div {
+    font-size: 14px;
+}
+
+.title {
+    margin-bottom: 0;
+    background: #f8f8f8;
+    padding: 10px 0 2px;
+    margin-top: 0;
+    border-bottom: #f0f0f0 solid 3px;
+}
+
+hr {
+    margin: 10px 0;
+}
+
+.btn-xs, .btn-group-xs > .btn {
+    padding: 1px 2px;
+}
+
+.modal-body {
+    background: #f6f6f6;
+}
+
+.modal-header {
+    color: #fff;
+    background: #023c51;
+}
+
+.frm-bx {
+    margin-top: 20px;
+    padding: 15px;
+    border: #ddd solid 1px;
+}
+
+.Clearbutton {
+    font-size: 14px;
+    background-color: orangered;
+    width: 59px;
+    height: 34px;
+    margin-left: 15px;
+    text-align: center;
+    cursor: pointer;
+    border: hidden;
+    border-radius: 4px;
+    color: white;
+}
+
+.box .fa-times {
+    position: initial;
+    background: #fff;
+    float: right;
+    font-size: 15px;
+}
+
+table tr td {
+    font-size: 14px;
+    color: #101010;
+    font-family: arial;
+}
+
+    table tr td p {
+        font-size: 14px;
+        color: #101010;
+        font-family: arial;
+    }
+
+    table tr td span {
+        font-size: 14px;
+        color: #101010;
+        font-family: arial;
+    }
+
+    table tr td label {
+        font-size: 14px;
+        color: #101010;
+        font-family: arial;
+    }
+
+h6 {
+    font-size: 14px;
+    color: #101010;
+    font-family: arial;
+}
+
+table tr th {
+    font-size: 14px;
+    color: #101010;
+    font-weight: 600;
+    font-family: arial;
+}
+
+.filter-color {
+    color: #fff;
+    background-color: #FF6347;
+    border-color: #3c97e5;
+    box-shadow: #ddd 1px 1px 4px 1px;
+}
+
+/* Preloader */
+
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+    /* change if the mask should have another color then white */
+    z-index: 99;
+    /* makes sure it stays on top */
+}
+
+#status {
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    left: 40%;
+    top: 30%;
+    /*background: url();*/
+    background: url('../../Images/Loader-6.gif');
+    background-size: 400px;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: -100px 0 0 -100px;
+}
+
+
+.mainlogo2 {
+    width:101px;
+}

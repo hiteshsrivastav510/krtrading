@@ -1,44 +1,368 @@
-﻿<!DOCTYPE html>
+﻿@{
+   
+
+    var IPAddress = (Request.ServerVariables["HTTP_X_FORWARDED_FOR"] == null) ? Request.ServerVariables["REMOTE_ADDR"] : Request.ServerVariables["HTTP_X_FORWARDED_FOR"];
+   
+
+  
+}
+<!DOCTYPE html>
 <html>
+
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W7ZMBE25JS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-W7ZMBE25JS');
+    </script>
+    <!-- Google Tag Manager -->
+    <script>
+(function (w, d, s, l, i) {
+w[l] = w[l] || []; w[l].push({
+'gtm.start':
+new Date().getTime(), event: 'gtm.js'
+}); var f = d.getElementsByTagName(s)[0],
+j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+})(window, document, 'script', 'dataLayer', 'GTM-5CTZ3ZL');</script>
+    <!-- End Google Tag Manager -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+    <title>Lab & Scientific Products - K.R Trading Co. Amritsar</title>
+    <meta name="keywords" content="Best Lab Products and Chemicals" />
+    <meta name="keywords" content="Lab Products" />
+    <meta name="keywords" content="Laboratory Products" />
+    <meta name="keywords" content="Lab Products in Amritsar" />
+    <meta name="keywords" content="Scientific Products" />
+    <meta name="description" content="Best Lab Products and Chemicals - K. R Trading Co. was founded on 20 Sep 2019.We are pleased to introduce ourselves as a renowned laboratory traders and supplier of Scientific Equipment, Diagnostic Lab Equipments, Laboratory Chemicals, Lab Plasticware, Laboratory Glassware, Reagents, Elisa Kits, Antibodies and offer various services i.e primer Synthesis, peptide synthesis, gene synthesis, Sanger sequencing, Next Generation Sequencing, RT PCR Probes etc.We are dealing in Amritsar, Punjab, India." />
+    @*<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="Geography" content="Office:-#1470, Main Chownk, Guru Gobind Singh Nagar, Nr. Gobind Palace, Tarn Taran Road, Amritsar, Punjab." />
+        <meta http-equiv="CACHE-CONTROL" content="PUBLIC" />
+        <meta name="Copyright" content="K.R Trading Co." />
+        <meta name="Designer" content="K.R Trading Co." />
+        <meta name="Publisher" content="K.R Trading Co." />
+        <meta name="distribution" content="Global" />
+        <meta name="Robots" content="INDEX,FOLLOW" />*@
+    <meta name="city" content="Amritsar" />
+    <meta name="state" content="Punjab" />
+    <meta name="country" content="India" />
+    <link rel="alternate" href="https://www.krtradingcoasr.com/" hreflang="en" />
+    <link rel="icon" href="~/Images/dna logo.jpg">
+    <link href="~/New/css/animations.css" rel="stylesheet" />
+    <link href="~/New/css/font-awesome.css" rel="stylesheet" />
+    <link href="~/New/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/css/style.css" rel="stylesheet" />
+    <link href="~/css/CssEdit.css" rel="stylesheet" />
+    <link href="~/Content/css/vestige.css" rel="stylesheet" />
+    <link href="~/Content/css/media.css" rel="stylesheet" />
+    <link href="~/New/css/admin.css" rel="stylesheet" />
+    <script src="~/js/jquery-2.2.4.min.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/jquery-1.9.1.js"></script>
+    <script src="~/js/imagezoom.js"></script>
+    <script src="~/js/owl.carousel.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.pageup').click(function () {
+                $('html,body').animate({ scrollTop: 0 }, 1000);
+            });
+            $('.menuopen').click(function () {
+                $('.navigation').slideToggle();
+            });
+            $('.bestoffer, .Feature').owlCarousel({
+                autoPlay: 2500,
+                items: 5,
+                navigation: true,
+                navigationText: ['<i class="fa fa-chevron-left"></i>', '<i class="fa fa-chevron-right"></i>']
+            });
+            $('.Related').owlCarousel({
+                items: 4,
+                navigation: true,
+                navigationText: ['<i class="fa fa-chevron-left"></i>', '<i class="fa fa-chevron-right"></i>']
+            });
+            $('.testimonial').owlCarousel({
+                items: 1,
+            });
+            $('.certificates').owlCarousel({
+                autoPlay: 2500,
+                items: 5,
+            });
+            $(".clsimg1").live("hover", function () {
+                var loc = $('#img1').attr("src");
+                $('.imgMain').attr("src", loc);
+                return false;
 
+            });
+            $(".clsimg1_1").live("hover", function () {
+                var loc = $('#img1_1').attr("src");
+                $('.imgMain').attr("src", loc);
+                return false;
+            });
+            $(".clsimg1_2").live("hover", function () {
+                var loc = $('#img1_2').attr("src");
+                $('.imgMain').attr("src", loc);
+                return false;
+            });
+        });
+    </script>
+    <script>
+        $(window).on('load', function () { // makes sure the whole site is loaded
+            $('#status').fadeOut(); // will first fade out the loading animation
+            $('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website.
+            $('body').delay(350).css({ 'overflow': 'visible' });
+        });
+    </script>
+    @*<script>
+            $(document).ready(function () {
+                alert("@IPAddress");
+            });
+        </script>*@
 </head>
-<body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", null, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+
+<body oncontextmenu=" return disableRightClick();">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5CTZ3ZL"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="preloader">
+        <div id="status">&nbsp;</div>
+    </div>
+    <header>
+        <div class="container-fluid">
+            <h1><a href="~/Home/Index"><img src="~/Images/Logo1.jpeg" class="logo" style="width:200px;margin-left:30px;" /></a></h1>
+              <div class="navLogin" style="width:auto;">
+                    <a href="/Home/login" id="login" class="btn loginbtn button--rayen text-primary" data-text="Login" title="Login"><span><i class="icon-profile"></i></span>login</a>
+                </div>
+            
+            <nav class="navigation" style="margin-right:;">
+                <div class="container-fluid">
+                    <a id="navigationBtn" class="navToggle" href="javascript:void(0)"><span></span></a>
+                    <div id="navHMenu" class="navBar" style="font-size: 8px;">
+                        <ul>
+                            <li><a href="/Home/Index" class="hvr-underline">Home</a></li>
+                            <li><a href="/Home/About" class="hvr-underline">About us</a></li>
+                            <li><a href="/Home/OurPrincipals" class="hvr-underline">Our Principal's</a></li>
+                            <li><a href="/Home/Products" class="hvr-underline">Products</a></li>
+                            <li><a href="/Home/Contact" class="hvr-underline">Contact us</a></li>
+                            <li><a href="/Home/WebsiteDeveloper" class="hvr-underline">Website Developer</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+
+        </div>
+
+
+    </header>
+
+
+    @RenderBody()
+    <span class="fa fa-long-arrow-up pageup" data-spy="affix" data-offset-top="100"></span>
+    <footer>
+        <div class="footer">
+            <div class="container">
+                <ul class="footlinks">
+                    <li><a href="/Home/About">about us</a></li>
+                    <li><a href="/Home/OurPrincipals">our principal's</a></li>
+                    <li><a href="/Home/Products">products</a></li>
+                    <li><a href="/Home/Contact">contact us</a></li>
+                    <li><a href="/Home/WebsiteDeveloper">Website Developer</a></li>
+                    @*<li><a href="/Home/term_condition">terms &amp; condition</a></li>
+                        <li><a href="/Home/privacy_policy">privacy policy</a></li>
+                        <li><a href="/Home/Retrun">Return</a></li>
+                        <li><a href="/Home/ShippingPolicy">Shipping Policy</a></li>*@
+
                 </ul>
-                @Html.Partial("_LoginPartial")
+                <ul class="footlinks footadrs">
+                    <li><i class="fa fa-map-marker"></i>#1470, Main Chownk, Guru Gobind Singh Nagar, Nr. Gobind Palace, Tarn Taran Road, Amritsar, Punjab. </li>
+                    <li><i class="fa fa-phone" style="margin-top:10px;"></i><a href="tel:+91-9855551531" style="font-size: 16px;"> +91-9855551531 </a></li>
+                    <li><i class="fa fa-envelope" style="margin-top:10px;"></i><a href="mailto:info@krtradingcoasr.com" style="font-size: 16px; text-transform: lowercase;">info@krtradingcoasr.com</a> </li>
+                    <li><i class="fa fa-envelope" style="margin-top:10px;"></i><a href="mailto:krtradingcoasr@gmail.com" style="font-size: 16px; text-transform: lowercase;">krtradingcoasr@gmail.com</a> </li>
+                </ul>
+                <ul class="socialicon">
+                    <li>Follow Us :</li>
+                    <li><a href="https://www.facebook.com/103742974784497/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="https://wa.me/+919855551531/" target="_blank" style="background-color:green;"><i class="fa fa-whatsapp"></i></a></li>
+                    @*<li><a href="https://www.facebook.com/Origin-Ayurveda-105475341468626" target="_blank"><i class="fa fa-facebook"></i></a></li>*@
+                    @*<li><a href="https://www.instagram.com/originayurveda/" target="_blank" class="instagram"><i class="fa fa-instagram"></i></a></li>
+                        <li><a href="https://www.youtube.com/channel/UCD0RxdGtjOvJpeQQIg6o8tA" target="_blank" class="link"><i class="fa fa-youtube"></i></a></li>
+                        <li><a href="https://www.linkedin.com/in/origin-ayurveda-799627202/" target="_blank" class="link"><i class="fa fa-linkedin"></i></a></li>*@
+                </ul>
             </div>
         </div>
-    </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
+        <div class="footabout">
+            <div class="container">
+                <div class="footlinks">
+                    <p></p>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+                </div>
+                <div class="footerfoot">
+                    Copyright  &copy; @DateTime.Now.Year, K.R. Trading Co. All Right Reserved
+                </div>
+            </div>
+        </div>
+    </footer>
+    <span id="socialBox" class="socialLinks fixedbox"></span>
+    <script src="~/Content/js/wow.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+
+            //
+            $('#navigationBtn').click(function (e) {
+                e.stopPropagation();
+                $('.navBar').toggleClass('showhide');
+                this.classList.toggle("active");
+                $('body').toggleClass('noScroll');
+                $('.vestigeOverlay').toggleClass('display');
+                $('header').toggleClass('contentbox hideonclick');
+            });
+
+            $('.navBar').click(function (e) {
+                e.stopPropagation();
+            });
+
+
+            //SUBDROPDOWN MOBILE
+            var isMobile = window.matchMedia("only screen and (max-width: 768px)");
+            if (isMobile.matches) {
+                $('.subdropdownbtn').click(function () {
+                    $(this).parents('li').toggleClass('mobhighlight');
+                    $(this).parents('li').siblings().removeClass('mobhighlight');
+                });
+
+                $('.dropdownlist h2').click(function () {
+                    $(this).parent().siblings('li').find('.subdropdownlist').slideUp();
+                    $(this).parent().find('.subdropdownlist').slideToggle();
+                });
+            }
+            //STICKY HEADER
+            $(window).scroll(function () {
+                var bannerheight = $('.bannerSlider').outerHeight();
+                if ($(window).scrollTop() >= 50) {
+                    $('header').addClass('fixHeader');
+                    $('.navigation').addClass('fixHeader');
+                }
+                else {
+                    $('header').removeClass('fixHeader');
+                    $('.navigation').removeClass('fixHeader');
+                }
+            });
+        });
+    </script>
+
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $(".navBar ul li a").each(function () {
+
+
+                if ($(this).attr("id") == "btncompany") {
+                    $(this).addClass("active");
+
+                }
+                else {
+                    $(this).removeClass("active");
+                }
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            //LAZY LOAD BACKGORUND
+            $('img').on('lazyload', function () {
+                var imageUrl = $(this).attr('src');
+                $(this).closest('.bannerImg').css('background-image', 'url(' + imageUrl + ')');
+            });
+            //LANGUAGE SELECT
+            $(".switchcountry").click(function (e) {
+                e.stopPropagation();
+                $(this).parent().find("ul").toggle();
+            });
+
+            //STICKY HEADER
+            $(window).scroll(function () {
+                var bannerheight = $('.bannerSlider').outerHeight();
+                if ($(window).scrollTop() >= 50) {
+                    $('header').addClass('fixHeader');
+                    $('.navigation').addClass('fixHeader');
+                }
+                else {
+                    $('header').removeClass('fixHeader');
+                    $('.navigation').removeClass('fixHeader');
+                }
+            });
+
+
+            //BUSINESS POPUP
+            $('.benefitBtn').click(function () {
+                $(".businessContainer img").attr('src', '');
+                url = $(this).attr('data-title');
+                $(".businessContainer img").attr('src', url);
+                $('#businessPopup').simplePopup();
+            });
+            $('#forgotpwdbtn').click(function () {
+                $('#forgotpwdPopup').simplePopup();
+            });
+        });
+        wow = new WOW({
+            mobile: false, // default
+        })
+        wow.init();
+
+        /* To Disable Inspect Element */
+        $(document).bind("contextmenu", function (e) {
+            e.preventDefault();
+        });
+        document.onkeydown = function (e) {
+            if (event.keyCode == 123) {
+                //alert("Sorry, This is not allowed");
+                return false;
+            }
+            if (e.ctrlKey && e.keyCode == 'E'.charCodeAt(0)) {
+                return false;
+            }
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+                return false;
+            }
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+                return false;
+            }
+            if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+                //alert("Sorry, Source Code is not allowed");
+                return false;
+            }
+            if (e.ctrlKey && e.keyCode == 'S'.charCodeAt(0)) {
+                return false;
+            }
+            if (e.ctrlKey && e.keyCode == 'H'.charCodeAt(0)) {
+                return false;
+            }
+            if (e.ctrlKey && e.keyCode == 'A'.charCodeAt(0)) {
+                return false;
+            }
+            if (e.ctrlKey && e.keyCode == 'F'.charCodeAt(0)) {
+                return false;
+            }
+            if (e.ctrlKey && e.keyCode == 'E'.charCodeAt(0)) {
+                return false;
+            }
+        }
+        /*To Disable Right Click*/
+        function disableRightClick() {
+            alert("Sorry, right click is not allowed !!");
+            return false;
+        }
+    </script>
+
 </body>
 </html>
+@RenderSection("scripts", required: false)

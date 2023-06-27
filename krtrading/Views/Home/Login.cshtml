@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewBag.Title = "login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    <meta name="description" content="K. R Trading Co. was founded on 20 Sep 2019.We are pleased to introduce ourselves as a renowned laboratory traders and supplier of Scientific Equipment, Diagnostic Lab Equipments, Laboratory Chemicals, Lab Plasticware, Laboratory Glassware, Reagents, Elisa Kits, Antibodies and offer various services i.e primer Synthesis, peptide synthesis, gene synthesis, Sanger sequencing, Next Generation Sequencing, RT PCR Probes etc." />
+    <meta name="keywords" content="Best Lab Products and Chemicals" />
+    <link rel="canonical" href="https://www.krtradingcoasr.com/Rohit-login" />
+    <link rel="alternate" href="https://www.krtradingcoasr.com/Rohit-login" hreflang="x-default" />
+
+}
+@*@if (TempData["Message"] != null)
+{
+    <script type="text/javascript">
+
+        window.onload = function () {
+            alert("@TempData["Message"]");
+        };
+    </script>
+}*@
+<section class="allDiv loginboxbg">
+    <div class="container">
+        <div class="col-md-4 col-sm-4 col-md-offset-4 col-sm-offset-4 col-xs-12">
+            <div class="loginbox Loginclass">
+                <h3>Login To K.R Trading Co.</h3>
+                   <div class="form-group">
+                        <input type="text" class="form-control" name="userid" placeholder="Enter UserName">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" name="password" placeholder="Enter password">
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" class="form-control btngreen" value="Submit">
+                    </div>
+                
+                <div class="form-group">
+                    <a href="/Home/forgot_pasword">Forgot Password</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
