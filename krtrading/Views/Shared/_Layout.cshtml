@@ -1,10 +1,10 @@
 ﻿@{
-   
+
 
     var IPAddress = (Request.ServerVariables["HTTP_X_FORWARDED_FOR"] == null) ? Request.ServerVariables["REMOTE_ADDR"] : Request.ServerVariables["HTTP_X_FORWARDED_FOR"];
-   
 
-  
+
+
 }
 <!DOCTYPE html>
 <html>
@@ -21,14 +21,14 @@
     </script>
     <!-- Google Tag Manager -->
     <script>
-(function (w, d, s, l, i) {
-w[l] = w[l] || []; w[l].push({
-'gtm.start':
-new Date().getTime(), event: 'gtm.js'
-}); var f = d.getElementsByTagName(s)[0],
-j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-})(window, document, 'script', 'dataLayer', 'GTM-5CTZ3ZL');</script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-5CTZ3ZL');</script>
     <!-- End Google Tag Manager -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -123,7 +123,7 @@ j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; 
         </script>*@
 </head>
 
-<body oncontextmenu=" return disableRightClick();">
+<body @*oncontextmenu=" return disableRightClick();"*@>
     <!-- Google Tag Manager (noscript) -->
     <noscript>
         <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5CTZ3ZL"
@@ -136,10 +136,10 @@ j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; 
     <header>
         <div class="container-fluid">
             <h1><a href="~/Home/Index"><img src="~/Images/Logo1.jpeg" class="logo" style="width:200px;margin-left:30px;" /></a></h1>
-              <div class="navLogin" style="width:auto;">
-                    <a href="/Home/login" id="login" class="btn loginbtn button--rayen text-primary" data-text="Login" title="Login"><span><i class="icon-profile"></i></span>login</a>
-                </div>
-            
+            <div class="navLogin" style="width:auto;">
+                <a href="/Home/login" id="login" class="btn loginbtn button--rayen text-primary" data-text="Login" title="Login"><span><i class="icon-profile"></i></span>login</a>
+            </div>
+
             <nav class="navigation" style="margin-right:;">
                 <div class="container-fluid">
                     <a id="navigationBtn" class="navToggle" href="javascript:void(0)"><span></span></a>
@@ -314,53 +314,53 @@ j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; 
             });
         });
         wow = new WOW({
-            mobile: false, // default
-        })
-        wow.init();
+            //    mobile: false, // default
+            //})
+            //wow.init();
 
-        /* To Disable Inspect Element */
-        $(document).bind("contextmenu", function (e) {
-            e.preventDefault();
-        });
-        document.onkeydown = function (e) {
-            if (event.keyCode == 123) {
-                //alert("Sorry, This is not allowed");
-                return false;
-            }
-            if (e.ctrlKey && e.keyCode == 'E'.charCodeAt(0)) {
-                return false;
-            }
-            if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
-                return false;
-            }
-            if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
-                return false;
-            }
-            if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
-                //alert("Sorry, Source Code is not allowed");
-                return false;
-            }
-            if (e.ctrlKey && e.keyCode == 'S'.charCodeAt(0)) {
-                return false;
-            }
-            if (e.ctrlKey && e.keyCode == 'H'.charCodeAt(0)) {
-                return false;
-            }
-            if (e.ctrlKey && e.keyCode == 'A'.charCodeAt(0)) {
-                return false;
-            }
-            if (e.ctrlKey && e.keyCode == 'F'.charCodeAt(0)) {
-                return false;
-            }
-            if (e.ctrlKey && e.keyCode == 'E'.charCodeAt(0)) {
-                return false;
-            }
-        }
-        /*To Disable Right Click*/
-        function disableRightClick() {
-            alert("Sorry, right click is not allowed !!");
-            return false;
-        }
+            ///* To Disable Inspect Element */
+            //$(document).bind("contextmenu", function (e) {
+            //    e.preventDefault();
+            //});
+            //document.onkeydown = function (e) {
+            //    if (event.keyCode == 123) {
+            //        //alert("Sorry, This is not allowed");
+            //        return false;
+            //    }
+            //    if (e.ctrlKey && e.keyCode == 'E'.charCodeAt(0)) {
+            //        return false;
+            //    }
+            //    if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+            //        return false;
+            //    }
+            //    if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+            //        return false;
+            //    }
+            //    if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+            //        //alert("Sorry, Source Code is not allowed");
+            //        return false;
+            //    }
+            //    if (e.ctrlKey && e.keyCode == 'S'.charCodeAt(0)) {
+            //        return false;
+            //    }
+            //    if (e.ctrlKey && e.keyCode == 'H'.charCodeAt(0)) {
+            //        return false;
+            //    }
+            //    if (e.ctrlKey && e.keyCode == 'A'.charCodeAt(0)) {
+            //        return false;
+            //    }
+            //    if (e.ctrlKey && e.keyCode == 'F'.charCodeAt(0)) {
+            //        return false;
+            //    }
+            //    if (e.ctrlKey && e.keyCode == 'E'.charCodeAt(0)) {
+            //        return false;
+            //    }
+            //}
+            ///*To Disable Right Click*/
+            //function disableRightClick() {
+            //    alert("Sorry, right click is not allowed !!");
+            //    return false;
+            //}
     </script>
 
 </body>
