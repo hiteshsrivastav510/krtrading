@@ -13,7 +13,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>krtrading</RootNamespace>
     <AssemblyName>krtrading</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -54,9 +54,9 @@
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Routing" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
@@ -157,10 +157,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccountModel\Encript.cs" />
+    <Compile Include="AdminModel\BannerList.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="BL\AdminBl.cs" />
+    <Compile Include="BL\CommonBL.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="DataLayer\ConnectionProvider.cs" />
@@ -174,6 +177,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="All Script\Procedure\BannerData.sql" />
+    <Content Include="All Script\Procedure\InsertErrorLog.sql" />
     <Content Include="All Script\Table\create table About.sql" />
     <Content Include="All Script\Table\create table Banner.sql" />
     <Content Include="All Script\Table\create table ChangePasswordEmailLinks.sql" />
