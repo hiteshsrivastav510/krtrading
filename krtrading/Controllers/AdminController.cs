@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using krtrading.AdminModel;
+using krtrading.BL;
 
 namespace krtrading.Controllers
 {
     public class AdminController : Controller
     {
+        AdminBl objBl = new AdminBl();
         // GET: Admin
         public ActionResult Index()
         {
@@ -16,7 +19,16 @@ namespace krtrading.Controllers
 
         public ActionResult Banner()
         {
-            return View();
+            try
+            {
+                BannerData obj = new BannerData();
+                obj = objBl.BannerData();
+                return View(obj);
+            }
+            catch(Exception exp)
+            {
+                return View();
+            }
         }
         public PartialViewResult _Pagination( int TotalRecords, int PageSize)
         {

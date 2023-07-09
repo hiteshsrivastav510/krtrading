@@ -1,25 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Web;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Diagnostics;
-using System.Web;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace krtrading.DataLayer
 {
 
-    public class MYSQLDataProvider
+    public class MYSQLDataProvider : IDisposable
     {
         private SqlConnection _connection;
         private readonly long? UserID = null;
 
         public MYSQLDataProvider()
         {
+            //this._connection = new SqlConnection(ConfigurationManager.ConnectionStrings["krtradingconn"].ToString());
             this._connection = new SqlConnection(ConnectionProvider.ModelConnection);
         }
         private void OpenConnection()
@@ -390,6 +386,21 @@ namespace krtrading.DataLayer
             }
             this.CloseConnection();
             return ds;
+        }
+        public void Dispose()
+        {
+            this.Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+        protected virtual void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                if (this._connection == null)
+                {
+                    this._connection.Dispose();
+                }
+            }
         }
 
     }

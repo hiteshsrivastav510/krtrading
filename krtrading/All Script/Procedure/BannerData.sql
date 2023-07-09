@@ -1,8 +1,8 @@
 ﻿create or alter  Proc BannerData
-@BannerImg nvarchar(max),
-@Sequence int,
+@BannerImg nvarchar(max)=null,
+@Sequence int=null,
 @Action nvarchar(250),
-@BannerId int
+@BannerId int=null
 as
 
 begin
@@ -19,9 +19,10 @@ begin
 update Banner set isdelete=1 where id=@BannerId
 end
 else if(@Action='BindData' )
-
  begin
- select  * from Banner where status=1 and isdelete=0
+ select  id,BannerImg 
+ from Banner where status=1 and isdelete=0
+ order by Sequence
  end
 end
 
