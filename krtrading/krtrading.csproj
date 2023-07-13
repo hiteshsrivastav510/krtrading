@@ -861,10 +861,12 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Admin\Banner.cshtml" />
     <Content Include="Views\Admin\_Pagination.cshtml" />
+    <Content Include="Views\Admin\_AddBanner.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="All Script\Setting\" />
     <Folder Include="App_Data\" />
+    <Folder Include="Upload\Banner\" />
     <Folder Include="Views\Home\" />
   </ItemGroup>
   <ItemGroup>

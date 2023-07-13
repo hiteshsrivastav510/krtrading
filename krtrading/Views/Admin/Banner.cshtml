@@ -1,7 +1,12 @@
-﻿
+﻿@model krtrading.AdminModel.BannerData
 @{
     ViewBag.Title = "BannerList";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    int Total = 0;
+    if (Model.objLst != null && Model.objLst.Count > 0)
+    {
+       Total= Model.objLst[0].TotalRecord;
+    }
 }
 
 @if (TempData["ErorrMessage"] == "Insert")
@@ -33,10 +38,10 @@ else if (TempData["ErorrMessage"] == "NotDelete")
     </div>
 }
 <h4 class="title">Banner Master</h4>
-<div class="col-lg-12">
+<div class="col-lg-12" style="margin-bottom:20px;">
     <div class="col-md-8">
         <div style="margin-top: 15px; margin-left:1em;">
-            <span>Total Records:- @ViewBag.Total</span>
+            <span>Total Records:- @Total</span>
         </div>
     </div>
     <div class="col-md-4">
@@ -46,6 +51,58 @@ else if (TempData["ErorrMessage"] == "NotDelete")
         </div>
     </div>
 
+</div>
+
+<div>
+    <table class="table table-bordered table-striped table-hover" style="width:100%;">
+        <tr class="tblheadclr1">
+            <th>Sr No</th>
+            <th>Banner Image</th>
+            <th>Sequence</th>
+            <th>Delete</th>
+        </tr>
+        @if (Model.objLst != null && Model.objLst.Count > 0)
+        {
+            int i = 1;
+            foreach (var item in Model.objLst)
+            {
+                string c = "odd";
+                if(i%2==0)
+                {
+                    c = "even";
+                }
+                <tr class="@c">
+                    <td>@i</td>
+                    <td>
+                        <a href="@item.BannerImg" target="_blank">
+                            <img src="@item.BannerImg" width="50px" height="50px" />
+                        </a>
+                    </td>
+                    <td>
+                        <a href="#" onclick="upDownfunction('@item.EncryptedId','UpBanner')" class="btn-sm btn-success">
+                            <i class="fa fa-arrow-up"></i>
+                        </a>
+
+                        <a href="#" onclick="upDownfunction('@item.EncryptedId','DownBanner')" class="btn-sm filter-color" style="margin-left:10px;">
+                            <i class="fa fa-arrow-down"></i>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="/Admin/DeleteBanner?q=@item.EncryptedId" onclick="return confirm('Are you sure want to delete this?')" class="btn-sm btn-info" style="background:red;">
+                            <i class="fa fa-trash-o"></i>
+                        </a>
+                    </td>
+                </tr>
+                i = i + 1;
+            }
+        }
+        else
+        {
+            <tr role="row" class="odd">
+                <td colspan="4" style="text-align:center;">No record found</td>
+            </tr>
+        }
+    </table>
 </div>
 
 <div class="modal fade" id="myModalText124" tabindex="-1" role="dialog" aria-labelledby="myModalLabeltext">
@@ -76,13 +133,13 @@ else if (TempData["ErorrMessage"] == "NotDelete")
 
 @{
     <script>
-        var PageIndex = 1; PageSize = 25; PageLimt=15
+        var PageIndex = 1; PageSize = 25; PageLimt = 15
         $(document).ready(function () {
 
         });
 
         function CheckStockStatus12() {
-            var TeamDetailPostBackURL = '/Admin/AddBanner';
+            var TeamDetailPostBackURL = '/Admin/_AddBanner';
             $.ajax({
                 type: "GET",
                 url: TeamDetailPostBackURL,
@@ -105,46 +162,33 @@ else if (TempData["ErorrMessage"] == "NotDelete")
 
         }
 
-        function upfunction(id) {
-            var TeamDetailPostBackURL = '/Admin/upBanner';
+        function upDownfunction(EncryptedId, Action) {
             $.ajax({
                 type: "GET",
-                url: TeamDetailPostBackURL,
+                url: '/Admin/UpDownBanner',
                 contentType: "application/json; charset=utf-8",
-                data: { "Id": id },
+                data: { q: EncryptedId, ActionUpDown: Action },
                 datatype: "json",
                 success: function (data) {
-                    if (data == "Success") {
-                        alert("Sequence Up Successfully");
-                        window.location.reload();
+                    if (Action == "UpBanner") {
+                        if (data == "Success") {
+                            alert("Sequence Up Successfully");
+                            window.location.reload();
+                        }
+                        else {
+                            alert("Sequence Not Up");
+                            window.location.reload();
+                        }
                     }
                     else {
-                        alert("Sequence Not Up");
-                        window.location.reload();
-                    }
-                },
-                error: function () {
-                    alert("Dynamic content load failed.");
-                }
-            });
-
-        }
-        function downfunction(id) {
-            var TeamDetailPostBackURL = '/Admin/downBanner';
-            $.ajax({
-                type: "GET",
-                url: TeamDetailPostBackURL,
-                contentType: "application/json; charset=utf-8",
-                data: { "Id": id },
-                datatype: "json",
-                success: function (data) {
-                    if (data == "Success") {
-                        alert("Sequence Down Successfully");
-                        window.location.reload();
-                    }
-                    else {
-                        alert("Sequence Not Down");
-                        window.location.reload();
+                        if (data == "Success") {
+                            alert("Sequence Down Successfully");
+                            window.location.reload();
+                        }
+                        else {
+                            alert("Sequence Not Down");
+                            window.location.reload();
+                        }
                     }
                 },
                 error: function () {
@@ -154,7 +198,7 @@ else if (TempData["ErorrMessage"] == "NotDelete")
 
         }
     </script>
-   
+
 }
 
 
